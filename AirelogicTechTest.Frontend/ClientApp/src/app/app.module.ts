@@ -8,12 +8,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { NavMenuComponent } from "./shared/nav-menu/nav-menu.component";
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ArtistComponent } from './artist/artist.component';
-import { SongComponent } from './song/song.component';
 import { APP_ROUTES } from "./app.routing";
+import { NavMenuComponent } from "./modules/shared/nav-menu/nav-menu.component";
+import { HomeComponent } from "./modules/home/home.component";
+import { PageNotFoundComponent } from "./modules/page-not-found/page-not-found.component";
+import { ArtistComponent } from "./modules/artist/artist.component";
+import { SongComponent } from "./modules/song/song.component";
 
 @NgModule({
   declarations: [
