@@ -6,6 +6,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 
 import { AppComponent } from './app.component';
 import { APP_ROUTES } from "./app.routing";
@@ -37,7 +38,8 @@ import { FooterComponent } from "./shared/footer/footer.component";
     RouterModule.forRoot(APP_ROUTES),
     FontAwesomeModule,
     ReactiveFormsModule,
-    NgbModule
+    NgbModule,
+    ScrollToModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

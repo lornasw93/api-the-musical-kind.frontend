@@ -4,7 +4,7 @@ import { LyricService } from "../../core/services/lyric.service";
 import { SearchService } from "../../core/services/search.service";
 import { Search } from "../../core/models/search.model";
 import { faFacebook } from '@fortawesome/free-brands-svg-icons';
-import { faShareSquare } from '@fortawesome/free-solid-svg-icons';
+import { faShareSquare, faArrowDown, faAlignLeft, faUsers } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-home',
@@ -12,6 +12,9 @@ import { faShareSquare } from '@fortawesome/free-solid-svg-icons';
 })
 export class HomeComponent {
   faShareSquare = faShareSquare;
+  faArrowDown = faArrowDown;
+  faAlignLeft = faAlignLeft;
+  faUsers = faUsers;
 
   lyricResults: any;
   lyricCount: any;
@@ -19,10 +22,7 @@ export class HomeComponent {
 
   searchResults: Search;
   searchForm: FormGroup;
-
-  showGeneral: boolean;
-  showSongLyrics: boolean;
-
+   
   constructor(private readonly service: LyricService,
     private readonly searchService: SearchService,
     private formBuilder: FormBuilder) {
@@ -38,11 +38,7 @@ export class HomeComponent {
       searchTerm: ['', Validators.required]
     });
   }
-
-  get formControls() {
-    return this.lyricsForm.controls;
-  }
-
+   
   onLyricSubmit() {
     const artist = this.lyricsForm.value.artist;
     const title = this.lyricsForm.value.title;
