@@ -13,7 +13,9 @@ import { APP_ROUTES } from "./app.routing";
 import { NavMenuComponent } from "./shared/nav-menu/nav-menu.component";
 import { HomeComponent } from "./home/home.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
-import { FooterComponent } from "./shared/footer/footer.component"; 
+import { FooterComponent } from "./shared/footer/footer.component";
+import { GeneralComponent } from './general/general.component';
+import { LyricComponent } from './lyric/lyric.component'; 
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { FooterComponent } from "./shared/footer/footer.component";
     NavMenuComponent,
     HomeComponent,
     PageNotFoundComponent,
-    FooterComponent, 
+    FooterComponent,
+    GeneralComponent,
+    LyricComponent, 
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

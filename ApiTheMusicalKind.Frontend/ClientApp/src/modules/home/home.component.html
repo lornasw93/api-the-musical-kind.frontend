@@ -34,81 +34,14 @@
         <fa-icon [icon]="faUsers" size="4x"></fa-icon>
         <h4>Blue Pill</h4>
         <p>I want to look generally, find out more info about my favourite band for example.</p>
-        <button class="btn-lg" [ngxScrollTo]="everything">I want it all</button>
+        <button class="btn-lg" [ngxScrollTo]="general">I want it all</button>
       </div>
     </div>
   </div>
 </section>
 <section class="container-fluid" #lyrics>
-  <div class="container">
-    <div class="section-title">
-      <h1>Let's get lyrical... Lyrical!!</h1>
-    </div>
-    <div class="row">
-      <div class="col">
-        <form class="form-inline" [formGroup]="lyricsForm" (ngSubmit)="onLyricSubmit()">
-          <div class="form-group">
-            <input type="text" name="name" class="form-control" formControlName="artist" id="artist" placeholder="artist e.g. coldplay" required />
-          </div>
-          <div class="form-group">
-            <input type="text" name="title" class="form-control" formControlName="title" id="title" placeholder="song e.g. yellow" required />
-          </div>
-          <div class="form-group">
-            <button type="submit" class="btn-lg" [disabled]="!lyricsForm.valid">Submit</button>
-          </div>
-        </form>
-        <div *ngIf="lyricResults">
-          <p>There are <strong>{{lyricCount}}</strong> words in this song.</p>
-          <p>{{lyricResults}}</p>
-        </div>
-      </div>
-    </div>
-  </div>
+  <app-lyric></app-lyric>
 </section>
-<section class="container-fluid" id="everything" #everything>
-  <div class="container">
-    <div class="section-title">
-      <h1>Data. Data. Data.</h1>
-    </div>
-    <div class="row">
-      <div class="col">
-        <form [formGroup]="searchForm" (ngSubmit)="onSearchSubmit()">
-
-
-
-
-
-          <div class="form-row">
-            <div class="col form-group">
-              <label>Search term</label>
-              <input type="text" name="searchTerm" class="form-control" formControlName="searchTerm" id="searchTerm" placeholder="e.g. coldplay" required />
-            </div>
-          </div>
-          <div class="text-center">
-            <button type="submit" class="btn-lg" [disabled]="!searchForm.valid">Search</button>
-          </div>
-        </form>
-        <div *ngIf="searchResults">
-          <h3>{{searchResults.artists.hits[0].artist.name}}</h3>
-          <img src="{{searchResults.artists.hits[0].artist.avatar}}" alt="{{searchResults.artists.hits[0].artist.name}}" height="250" />
-          <div class="container">
-            <div class="card-deck">
-              <div *ngFor="let item of searchResults.tracks.hits">
-                <div class="card" style="height: 100%">
-                  <img class="card-img-top" src="{{item.track.share.image}}" alt="Card image cap">
-                  <div class="card-body">
-                    <h5 class="card-title">{{item.track.title}}</h5>
-                    <p class="card-text">{{item.track.lyricWordCount}} lyric word count</p>
-                  </div>
-                  <div class="card-footer">
-                    <small class="text-muted"> <a href="{{item.track.url}}" target="_blank"><fa-icon [icon]="faShareSquare"></fa-icon> Shazam</a></small>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<section class="container-fluid" id="general" #general>
+  <app-general></app-general>
 </section>

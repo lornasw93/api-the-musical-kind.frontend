@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="section-title">
+    <h1>Let's get lyrical... Lyrical!!</h1>
+  </div>
+  <div class="row">
+    <div class="col">
+      <form class="form-inline" [formGroup]="lyricsForm" (ngSubmit)="onLyricSubmit()">
+        <div class="form-group">
+          <input type="text" name="name" class="form-control" formControlName="artist" id="artist" placeholder="artist e.g. coldplay" required />
+        </div>
+        <div class="form-group">
+          <input type="text" name="title" class="form-control" formControlName="title" id="title" placeholder="song e.g. yellow" required />
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn-lg" [disabled]="!lyricsForm.valid">Submit</button>
+        </div>
+      </form>
+      <div *ngIf="lyricResults">
+        <p>There are <strong>{{lyricCount}}</strong> words in this song</p>
+        <p>{{lyricResults.lyric}}</p>
+        <p>Top 5 most common words:</p>
+
+        <div *ngFor="let item of lyricResults.common; index as i">
+          {{item}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
