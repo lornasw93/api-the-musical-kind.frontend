@@ -3,6 +3,7 @@
 @link: #ff7c1f;
 @purple: #6e15d1;
 @almost-white: #f1f1f1;
+@purple-light: lighten(hsl(332, 79%, 49%), 30%);
 
 body {
   background: @almost-white;
@@ -35,11 +36,11 @@ button {
 
   h1 {
     margin: 0;
-    font-size: 110px;
     font-weight: 700;
-    line-height: 85px;
     color: black;
     text-transform: lowercase;
+    font-size: 110px;
+    line-height: 85px;
   }
 
   h4 {
@@ -59,51 +60,57 @@ button {
   }
 }
 
-@media (min-width: 1200px) {
-  .navbar {
-    padding: .5rem 3rem;
-  }
-
+/*@media (min-width: 1200px) {
   #hero {
-    background-attachment: fixed;
+   // background-attachment: fixed;
   }
-}
+}*/
 
 @media (max-width: 991px) {
-  .navbar {
-    padding: .5rem 1rem;
-  }
-
   #hero {
     text-align: center;
-  }
 
-  #hero .container, #hero .container-fluid {
-    //padding-top: 68px;
-  }
+    h1 {
+      font-size: 80px;
+    }
 
-  #hero .hero-img {
-    text-align: center;
-  }
+    h4 {
+      font-size: 18px;
+      width: 100%;
+    }
 
-  #hero .hero-img img {
-    width: 50%;
+    button {
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    img {
+      width: 50%;
+    }
   }
 }
 
 @media (max-width: 768px) {
-  #hero h1 {
-    font-size: 26px;
-    line-height: 36px;
-  }
+  #hero {
+    text-align: center;
 
-  #hero h2 {
-    font-size: 18px;
-    line-height: 24px;
-  }
+    h1 {
+      font-size: 80px;
+    }
 
-  #hero .hero-img img {
-    width: 60%;
+    h4 {
+      font-size: 18px;
+      width: 100%;
+    }
+
+    button {
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    img {
+      width: 50%;
+    }
   }
 }
 
@@ -117,6 +124,11 @@ section:not(#hero) {
 
 section#intro {
   background-color: @purple;
+  color: @almost-white;
+}
+
+section#everything {
+  background-color: @purple-light;
   color: @almost-white;
 }
 
@@ -151,4 +163,47 @@ section#intro {
 
 section#intro h4 {
   margin-top: 20px;
+}
+
+.card {
+  background: transparent;
+  border: 1px solid @almost-white;
+  color: @almost-white;
+
+  .card-footer {
+    background: transparent;
+  }
+}
+
+
+
+
+
+
+
+
+.form-inline {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.form-inline input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: none;
+  //height: 50px;
+}
+
+@media (max-width: 800px) {
+  .form-inline input {
+    margin: 10px 0;
+  }
+
+  .form-inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
 }

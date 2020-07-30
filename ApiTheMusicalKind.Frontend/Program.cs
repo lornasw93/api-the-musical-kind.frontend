@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
-namespace AirelogicTechTest.Frontend
+namespace ApiTheMusicalKind.Frontend
 {
     public class Program
     {

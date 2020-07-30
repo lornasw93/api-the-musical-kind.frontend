@@ -39,24 +39,22 @@
     </div>
   </div>
 </section>
-<section class="container-fluid">
+<section class="container-fluid" #lyrics>
   <div class="container">
     <div class="section-title">
-      <h1>Let's get lyrical</h1>
+      <h1>Let's get lyrical... Lyrical!!</h1>
     </div>
     <div class="row">
       <div class="col">
-        <form [formGroup]="lyricsForm" (ngSubmit)="onLyricSubmit()" #lyrics>
-          <div class="form-row">
-            <div class="col-md-6 form-group">
-              <input type="text" name="name" class="form-control" formControlName="artist" id="artist" placeholder="e.g. coldplay" required />
-            </div>
-            <div class="col-md-6 form-group">
-              <input type="text" class="form-control" name="title" formControlName="title" id="title" placeholder="e.g. yellow" required />
-            </div>
+        <form class="form-inline" [formGroup]="lyricsForm" (ngSubmit)="onLyricSubmit()">
+          <div class="form-group">
+            <input type="text" name="name" class="form-control" formControlName="artist" id="artist" placeholder="artist e.g. coldplay" required />
           </div>
-          <div class="text-center">
-            <button type="submit" class="btn-lg" [disabled]="!lyricsForm.valid">Count Lyrics</button>
+          <div class="form-group">
+            <input type="text" name="title" class="form-control" formControlName="title" id="title" placeholder="song e.g. yellow" required />
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn-lg" [disabled]="!lyricsForm.valid">Submit</button>
           </div>
         </form>
         <div *ngIf="lyricResults">
@@ -67,16 +65,22 @@
     </div>
   </div>
 </section>
-<sectin class="container-fluid"> 
+<section class="container-fluid" id="everything" #everything>
   <div class="container">
     <div class="section-title">
       <h1>Data. Data. Data.</h1>
     </div>
     <div class="row">
       <div class="col">
-        <form [formGroup]="searchForm" (ngSubmit)="onSearchSubmit()" #everything>
+        <form [formGroup]="searchForm" (ngSubmit)="onSearchSubmit()">
+
+
+
+
+
           <div class="form-row">
             <div class="col form-group">
+              <label>Search term</label>
               <input type="text" name="searchTerm" class="form-control" formControlName="searchTerm" id="searchTerm" placeholder="e.g. coldplay" required />
             </div>
           </div>
@@ -106,5 +110,5 @@
         </div>
       </div>
     </div>
-  </div> 
-</sectin>
+  </div>
+</section>

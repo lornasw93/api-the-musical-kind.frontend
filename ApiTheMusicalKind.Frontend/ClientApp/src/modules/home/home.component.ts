@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LyricService } from "../../core/services/lyric.service";
 import { SearchService } from "../../core/services/search.service";
 import { Search } from "../../core/models/search.model";
-import { faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { faShareSquare, faArrowDown, faAlignLeft, faUsers } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -22,7 +21,7 @@ export class HomeComponent {
 
   searchResults: Search;
   searchForm: FormGroup;
-   
+
   constructor(private readonly service: LyricService,
     private readonly searchService: SearchService,
     private formBuilder: FormBuilder) {
@@ -38,14 +37,16 @@ export class HomeComponent {
       searchTerm: ['', Validators.required]
     });
   }
-   
+
   onLyricSubmit() {
     const artist = this.lyricsForm.value.artist;
     const title = this.lyricsForm.value.title;
 
-    this.service.getLyric(artist, title).subscribe((data: any) => {
-      this.lyricResults = data;
-    });
+    this.service.getLyric(artist, title).subscribe(
+      (data: any) => { this.lyricResults = data; },
+      err => console.error(err),
+      () => console.log('Success')
+    );
 
     this.service.getLyricCount(artist, title).subscribe((data: any) => {
       this.lyricCount = data;

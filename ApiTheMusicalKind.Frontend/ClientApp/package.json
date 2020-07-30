@@ -1,11 +1,11 @@
 {
-  "name": "airelogictechtest.frontend",
+  "name": "ApiTheMusicalKind.frontend",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:ssr": "ng run AirelogicTechTest.Frontend:server:dev",
+    "build:ssr": "ng run ApiTheMusicalKind.Frontend:server:dev",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
