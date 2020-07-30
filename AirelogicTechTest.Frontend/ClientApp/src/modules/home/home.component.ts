@@ -20,6 +20,9 @@ export class HomeComponent {
   searchResults: Search;
   searchForm: FormGroup;
 
+  showGeneral: boolean;
+  showSongLyrics: boolean;
+
   constructor(private readonly service: LyricService,
     private readonly searchService: SearchService,
     private formBuilder: FormBuilder) {
@@ -33,7 +36,7 @@ export class HomeComponent {
 
     this.searchForm = this.formBuilder.group({
       searchTerm: ['', Validators.required]
-    }); 
+    });
   }
 
   get formControls() {
@@ -58,6 +61,6 @@ export class HomeComponent {
 
     this.searchService.getResults(searchTerm).subscribe((data: Search) => {
       this.searchResults = data;
-    }); 
+    });
   };
 }
