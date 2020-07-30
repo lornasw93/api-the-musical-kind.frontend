@@ -18,13 +18,30 @@
 
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Compile Remove="ClientApp\dist\**" />
     <Content Remove="$(SpaRoot)**" />
+    <Content Remove="ClientApp\dist\**" />
+    <EmbeddedResource Remove="ClientApp\dist\**" />
     <None Remove="$(SpaRoot)**" />
+    <None Remove="ClientApp\dist\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ClientApp\src\core\models\" />
+    <None Remove="ClientApp\dist\3rdpartylicenses.txt" />
+    <None Remove="ClientApp\dist\assets\favicon\favicon.ico" />
+    <None Remove="ClientApp\dist\assets\undraw_compose_music_ovo2.svg" />
+    <None Remove="ClientApp\dist\index.html" />
+    <None Remove="ClientApp\dist\main-es2015.44eb6e5df9aae1d09ded.js" />
+    <None Remove="ClientApp\dist\main-es5.44eb6e5df9aae1d09ded.js" />
+    <None Remove="ClientApp\dist\polyfills-es2015.3b4501ec95e912bde7a8.js" />
+    <None Remove="ClientApp\dist\polyfills-es5.cb063e9566fff9a2aef8.js" />
+    <None Remove="ClientApp\dist\runtime-es2015.409e6590615fb48d139f.js" />
+    <None Remove="ClientApp\dist\runtime-es5.409e6590615fb48d139f.js" />
+    <None Remove="ClientApp\dist\styles.5a832334d773a0a30a11.css" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Controllers\" />
   </ItemGroup>
 

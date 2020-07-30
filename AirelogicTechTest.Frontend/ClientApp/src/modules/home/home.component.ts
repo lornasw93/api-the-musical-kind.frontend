@@ -2,17 +2,22 @@ import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { LyricService } from "../../core/services/lyric.service";
 import { SearchService } from "../../core/services/search.service";
+import { Search } from "../../core/models/search.model";
+import { faFacebook } from '@fortawesome/free-brands-svg-icons';
+import { faShareSquare } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
 })
 export class HomeComponent {
+  faShareSquare = faShareSquare;
+
   lyricResults: any;
   lyricCount: any;
   lyricsForm: FormGroup;
 
-  searchResults: any;
+  searchResults: Search;
   searchForm: FormGroup;
 
   constructor(private readonly service: LyricService,
@@ -51,7 +56,7 @@ export class HomeComponent {
   onSearchSubmit() {
     const searchTerm = this.searchForm.value.searchTerm;
 
-    this.searchService.getResults(searchTerm).subscribe((data: any) => {
+    this.searchService.getResults(searchTerm).subscribe((data: Search) => {
       this.searchResults = data;
     }); 
   };
