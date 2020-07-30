@@ -1,4 +1,4 @@
-//import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -35,7 +35,7 @@ import { SongComponent } from "./modules/song/song.component";
     RouterModule.forRoot(APP_ROUTES),
     FontAwesomeModule,
     ReactiveFormsModule,
-    //NgbModule
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
