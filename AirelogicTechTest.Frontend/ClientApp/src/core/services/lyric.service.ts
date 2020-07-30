@@ -14,4 +14,8 @@ export class LyricService extends BaseApiService<object> {
   getLyric(artist, title) {
     return this.get(`artist=${artist}&title=${title}`);
   }
+
+  getLyricCount(artist, title) {
+    return this.getCount(`artist=${artist}&title=${title}`);
+  }
 }

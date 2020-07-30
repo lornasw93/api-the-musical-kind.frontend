@@ -7,7 +7,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './home.component.html',
 })
 export class HomeComponent {
-  results: string;
+  results: any;
+  count: any;
+
   lyricsForm: FormGroup;
 
   constructor(private readonly service: LyricService,
@@ -26,7 +28,6 @@ export class HomeComponent {
   }
 
   onSubmit() {
-
     const artist = this.lyricsForm.value.artist;
     const title = this.lyricsForm.value.title;
 
@@ -34,11 +35,8 @@ export class HomeComponent {
       this.results = data;
     });
 
-    //var data = {
-    //  name: this.contactForm.value.name,
-    //  email: this.contactForm.value.email,
-    //  message: this.contactForm.value.message
-    //};
-
+    this.service.getLyricCount(artist, title).subscribe((data: any) => {
+      this.count = data;
+    });
   };
 }

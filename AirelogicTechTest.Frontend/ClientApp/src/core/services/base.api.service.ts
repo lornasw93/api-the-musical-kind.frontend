@@ -11,7 +11,16 @@ export abstract class BaseApiService<T> {
   constructor(protected httpClient: HttpClient) { }
 
   get(url): Observable<T> {
-    console.log(`GET: ${this.baseUrl}?${url}`);
-    return this.httpClient.get<T>(`${this.baseUrl}?${url}`);
+    var to = `${this.baseUrl}?${url}`;
+
+    console.log(`GET: ${to}`);
+    return this.httpClient.get<T>(`${to}`);
+  }
+
+  getCount(url): Observable<T> {
+    var to = `${this.baseUrl}/count?${url}`;
+
+    console.log(`GET COUNT: ${to}`);
+    return this.httpClient.get<T>(`${to}`);
   }
 }
