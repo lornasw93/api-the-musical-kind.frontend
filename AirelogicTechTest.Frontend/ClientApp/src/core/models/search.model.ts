@@ -27,6 +27,7 @@ export class HitTrack {
   hub: Hub;
   artists: HitArtist[];
   url: string;
+  lyricWordCount: number;
 }
 
 export class Share {
