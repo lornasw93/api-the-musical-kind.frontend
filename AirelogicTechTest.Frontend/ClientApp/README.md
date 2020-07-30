@@ -1,6 +1,10 @@
-# Airelogic Tech Test Frontend
+# API, the Musical Kind. (Frontend)
 
 This project was developed using Angular 9.
+
+## Quick start
+
+`npm install`
 
 ## Development server
 

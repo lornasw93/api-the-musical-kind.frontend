@@ -9,11 +9,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
 import { APP_ROUTES } from "./app.routing";
-import { NavMenuComponent } from "./modules/shared/nav-menu/nav-menu.component";
-import { HomeComponent } from "./modules/home/home.component";
-import { PageNotFoundComponent } from "./modules/page-not-found/page-not-found.component";
-import { ArtistComponent } from "./modules/artist/artist.component";
-import { SongComponent } from "./modules/song/song.component";
+import { NavMenuComponent } from "./shared/nav-menu/nav-menu.component";
+import { HomeComponent } from "./home/home.component";
+import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
+import { ArtistComponent } from "./artist/artist.component";
+import { SongComponent } from "./song/song.component";
+import { FooterComponent } from "./shared/footer/footer.component";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SongComponent } from "./modules/song/song.component";
     HomeComponent,
     PageNotFoundComponent,
     ArtistComponent,
-    SongComponent
+    SongComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

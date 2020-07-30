@@ -6,19 +6,21 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export abstract class BaseApiService<T> {
-  baseUrl = 'https://localhost:44331/api/lyrics';
+  baseUrl = 'https://localhost:44331/api';
+
+  abstract resourceUrl: string;
 
   constructor(protected httpClient: HttpClient) { }
 
   get(url): Observable<T> {
-    var to = `${this.baseUrl}?${url}`;
+    var to = `${this.baseUrl}/${this.resourceUrl}?${url}`;
 
     console.log(`GET: ${to}`);
     return this.httpClient.get<T>(`${to}`);
   }
 
   getCount(url): Observable<T> {
-    var to = `${this.baseUrl}/count?${url}`;
+    var to = `${this.baseUrl}/${this.resourceUrl}/count?${url}`;
 
     console.log(`GET COUNT: ${to}`);
     return this.httpClient.get<T>(`${to}`);

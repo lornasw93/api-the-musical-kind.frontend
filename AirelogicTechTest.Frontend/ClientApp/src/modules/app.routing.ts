@@ -1,8 +1,8 @@
-import { Routes } from '@angular/router';
-import { HomeComponent } from "./modules/home/home.component";
-import { ArtistComponent } from "./modules/artist/artist.component";
-import { SongComponent } from "./modules/song/song.component";
-import { PageNotFoundComponent } from "./modules/page-not-found/page-not-found.component";
+import { Routes } from '@angular/router'; 
+import { HomeComponent } from "./home/home.component";
+import { ArtistComponent } from "./artist/artist.component";
+import { SongComponent } from "./song/song.component";
+import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
 
 export const APP_ROUTES: Routes = [
   { path: '', component: HomeComponent },

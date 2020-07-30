@@ -6,6 +6,7 @@ import { BaseApiService } from './base.api.service';
   providedIn: 'root'
 })
 export class LyricService extends BaseApiService<object> {
+  resourceUrl: string = 'lyrics';
 
   constructor(private http: HttpClient) {
     super(http);
