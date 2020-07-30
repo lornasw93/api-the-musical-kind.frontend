@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist",
+    "public": "AirelogicTechTest.FrontEnd/ClientApp/dist",
     "ignore": [
       "firebase.json",
       "**/.*",
