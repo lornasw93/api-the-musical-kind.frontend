@@ -17,7 +17,7 @@
       </form>
       <div *ngIf="lyricResults">
         <p>There are <strong>{{lyricCount}}</strong> words in this song</p>
-        <p>{{lyricResults.lyric}}</p>
+        <p>{{lyricResults.lyrics}}</p>
         <p>Top 5 most common words:</p>
 
         <div *ngFor="let item of lyricResults.common; index as i">
