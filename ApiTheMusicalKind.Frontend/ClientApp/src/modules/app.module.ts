@@ -8,6 +8,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 import { NgHttpLoaderModule } from 'ng-http-loader';
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
+import { CommonModule } from '@angular/common';
 
 import { AppComponent } from './app.component';
 import { APP_ROUTES } from "./app.routing";
@@ -41,7 +43,9 @@ import { DeezerSearchComponent } from './deezer-search/deezer-search.component';
     ReactiveFormsModule,
     NgbModule,
     ScrollToModule.forRoot(),
-    NgHttpLoaderModule.forRoot()
+    NgHttpLoaderModule.forRoot(),
+    SweetAlert2Module.forRoot(),
+    CommonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

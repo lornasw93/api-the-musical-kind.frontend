@@ -1,28 +1,3 @@
-export class Artist {
-  id: number;
-  name: string;
-  link: string;
-  picture: string;
-  picture_small: string;
-  picture_medium: string;
-  picture_big: string;
-  picture_xl: string;
-  tracklist: string;
-  type: string;
-}
-
-export class Album {
-  id: number;
-  title: string;
-  cover: string;
-  cover_small: string;
-  cover_medium: string;
-  cover_big: string;
-  cover_xl: string;
-  tracklist: string;
-  type: string;
-}
-
 export class Datum {
   id: number;
   readable: boolean;
@@ -36,13 +11,38 @@ export class Datum {
   explicit_content_lyrics: number;
   explicit_content_cover: number;
   preview: string;
-  artist: Artist;
-  album: Album;
+  artist: {
+    id: number;
+    name: string;
+    link: string;
+    picture: string;
+    picture_small: string;
+    picture_medium: string;
+    picture_big: string;
+    picture_xl: string;
+    tracklist: string;
+    type: string;
+  };
+  album: {
+    id: number;
+    title: string;
+    cover: string;
+    cover_small: string;
+    cover_medium: string;
+    cover_big: string;
+    cover_xl: string;
+    tracklist: string;
+    type: string;
+  };
   type: string;
 }
 
 export class DeezerRootObject {
-  data: Datum[];
-  total: number;
-  next: string;
+  data: {
+    result: {
+      data: Datum[];
+      total: number;
+      next: string;
+    }
+  }
 }

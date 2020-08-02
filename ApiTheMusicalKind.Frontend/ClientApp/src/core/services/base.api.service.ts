@@ -6,8 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export abstract class BaseApiService<T> {
-  baseUrl = 'https://api-the-musical-kind-backend.azurewebsites.net';
-  //baseUrl = 'https://localhost:44331';
+  //baseUrl = 'https://api-the-musical-kind-backend.azurewebsites.net';
+  baseUrl = 'https://localhost:44331';
 
   abstract resourceUrl: string;
 

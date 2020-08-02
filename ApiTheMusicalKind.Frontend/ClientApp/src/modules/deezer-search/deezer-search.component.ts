@@ -3,6 +3,7 @@ import { faDeezer } from '@fortawesome/free-brands-svg-icons';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DeezerService } from "../../core/services/deezer.service";
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-deezer-search',
@@ -15,6 +16,7 @@ export class DeezerSearchComponent implements OnInit {
 
   searchResults: any;
   searchForm: FormGroup;
+  searchError: string;
 
   avgDuration: number;
   sumDuration: number;
@@ -31,12 +33,17 @@ export class DeezerSearchComponent implements OnInit {
 
   onSearchSubmit() {
     const query = this.searchForm.value.query;
-
     this.deezerService.getSearchResults(query).subscribe((data: any) => {
       this.searchResults = data.result.data;
-
       this.calc(this.searchResults.length, this.searchResults);
-    });
+    },
+      (err) => {
+        this.searchResults = null;
+        this.searchError = '0 results';
+
+        Swal.fire('Oops!', 'No results found 🙄', 'error');
+      }
+    );
   }
 
   calc(resultCount, durations) {
