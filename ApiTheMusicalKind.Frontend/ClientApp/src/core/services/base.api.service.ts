@@ -6,8 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export abstract class BaseApiService<T> {
-  //baseUrl = 'https://api-the-musical-kind-backend.azurewebsites.net/api';
-  baseUrl = 'https://localhost:44331'; //BE
+  baseUrl = 'https://api-the-musical-kind-backend.azurewebsites.net';
+  //baseUrl = 'https://localhost:44331';
 
   abstract resourceUrl: string;
 
@@ -24,6 +24,13 @@ export abstract class BaseApiService<T> {
     var to = `${this.baseUrl}/${this.resourceUrl}?${url}`;
 
     console.log(`GET: ${to}`);
+    return this.httpClient.get<T>(`${to}`);
+  }
+
+  count(url): Observable<T> {
+    var to = `${this.baseUrl}/${this.resourceUrl}?${url}`;
+
+    console.log(`COUNT: ${to}`);
     return this.httpClient.get<T>(`${to}`);
   }
 }

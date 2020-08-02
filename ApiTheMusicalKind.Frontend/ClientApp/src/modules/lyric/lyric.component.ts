@@ -28,8 +28,6 @@ export class LyricComponent implements OnInit {
 
     this.service.getLyrics(artist, title).subscribe((data: any) => {
       this.lyricResults = data;
-
-      console.log(this.lyricResults);
     });
   };
 }
