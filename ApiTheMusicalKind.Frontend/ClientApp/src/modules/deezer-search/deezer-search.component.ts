@@ -1,4 +1,4 @@
-import { faUser, faVolumeUp } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faVolumeUp, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { faDeezer } from '@fortawesome/free-brands-svg-icons';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';

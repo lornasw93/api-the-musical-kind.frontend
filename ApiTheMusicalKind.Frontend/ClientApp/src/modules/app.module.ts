@@ -7,15 +7,16 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+import { NgHttpLoaderModule } from 'ng-http-loader';
 
 import { AppComponent } from './app.component';
 import { APP_ROUTES } from "./app.routing";
 import { NavMenuComponent } from "./shared/nav-menu/nav-menu.component";
 import { HomeComponent } from "./home/home.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
-import { FooterComponent } from "./shared/footer/footer.component"; 
+import { FooterComponent } from "./shared/footer/footer.component";
 import { LyricComponent } from './lyric/lyric.component';
-import { DeezerSearchComponent } from './deezer-search/deezer-search.component'; 
+import { DeezerSearchComponent } from './deezer-search/deezer-search.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,7 @@ import { DeezerSearchComponent } from './deezer-search/deezer-search.component';
     PageNotFoundComponent,
     FooterComponent,
     LyricComponent,
-    DeezerSearchComponent, 
+    DeezerSearchComponent,
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -39,7 +40,8 @@ import { DeezerSearchComponent } from './deezer-search/deezer-search.component';
     FontAwesomeModule,
     ReactiveFormsModule,
     NgbModule,
-    ScrollToModule.forRoot()
+    ScrollToModule.forRoot(),
+    NgHttpLoaderModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
