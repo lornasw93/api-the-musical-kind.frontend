@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="section-title">
+    <h1>Deezer Data</h1>
+  </div>
+  <div class="row">
+    <div class="col">
+      <form class="form-inline" [formGroup]="searchForm" (ngSubmit)="onSearchSubmit()">
+        <div class="form-group">
+          <input type="text" name="query" class="form-control" formControlName="query" id="query" placeholder="e.g. holy hell architects" required />
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn-lg" [disabled]="!searchForm.valid">Submit</button>
+        </div>
+      </form>
+      <div *ngIf="searchResults">
+        <div class="container">
+          <p><strong>{{searchResults.length}}</strong> results</p>
+          <p>Average duration (s): <strong>{{avgDuration}}</strong></p>
+          <p>Total duration (s): <strong>{{sumDuration}}</strong></p>
+           
+          <div class="card-deck">
+            <div *ngFor="let item of searchResults">
+              <div class="card" style="height: 100%">
+                <img class="card-img-top" src="{{item.album.cover_medium}}" alt="Album cover">
+                <div class="card-body">
+                  <h5 class="card-title">{{item.title_short}}</h5>
+                  <p class="card-text">
+                    Artist: {{item.artist.name}}<br>
+                    Album: {{item.album.title}}<br>
+                    Duration (s): {{item.duration}}
+                  </p>
+                </div>
+                <div class="card-footer">
+                  <small class="text-muted pull-right">
+                    <a target="_blank" href="{{item.artist.link}}"><fa-icon [icon]="faUser"></fa-icon></a>
+                    <a target="_blank" href="{{item.link}}"><fa-icon [icon]="faVolumeUp"></fa-icon></a>
+                  </small>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

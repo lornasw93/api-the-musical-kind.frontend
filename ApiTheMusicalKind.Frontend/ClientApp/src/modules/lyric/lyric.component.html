@@ -16,14 +16,14 @@
         </div>
       </form>
       <div *ngIf="lyricResults">
-        <p>There are <strong>{{lyricCount}}</strong> words in this song</p>
-        <p>{{lyricResults.lyrics}}</p>
+        <p>There are <strong>{{lyricResults.result.wordCount}}</strong> words in this song</p>
+        <p>{{lyricResults.result.lyrics}}</p>
         <p>Top 5 most common words:</p>
 
-        <div *ngFor="let item of lyricResults.common; index as i">
+        <div *ngFor="let item of lyricResults.result.common; index as i">
           {{item}}
         </div>
       </div>
     </div>
   </div>
-</div>
+</div> 

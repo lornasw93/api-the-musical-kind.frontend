@@ -13,9 +13,9 @@ import { APP_ROUTES } from "./app.routing";
 import { NavMenuComponent } from "./shared/nav-menu/nav-menu.component";
 import { HomeComponent } from "./home/home.component";
 import { PageNotFoundComponent } from "./page-not-found/page-not-found.component";
-import { FooterComponent } from "./shared/footer/footer.component";
-import { GeneralComponent } from './general/general.component';
-import { LyricComponent } from './lyric/lyric.component'; 
+import { FooterComponent } from "./shared/footer/footer.component"; 
+import { LyricComponent } from './lyric/lyric.component';
+import { DeezerSearchComponent } from './deezer-search/deezer-search.component'; 
 
 @NgModule({
   declarations: [
@@ -24,8 +24,8 @@ import { LyricComponent } from './lyric/lyric.component';
     HomeComponent,
     PageNotFoundComponent,
     FooterComponent,
-    GeneralComponent,
-    LyricComponent, 
+    LyricComponent,
+    DeezerSearchComponent, 
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

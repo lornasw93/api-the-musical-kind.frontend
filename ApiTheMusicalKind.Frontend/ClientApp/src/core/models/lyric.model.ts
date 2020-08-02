@@ -1,4 +1,4 @@
-export class CustomLyric {
+export class LyricsRootObject {
   lyric: string;
   common: Common[];
 }
